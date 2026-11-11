@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenegarTodoExceptoRolesDefinidos",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::actividad3-seguro-local",
+        "arn:aws:s3:::actividad3-seguro-local/*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::000000000000:role/rol-lectura-actividad3",
+            "arn:aws:iam::000000000000:role/rol-admin-actividad3"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "DenegarTransporteSinTLS",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": [
+        "arn:aws:s3:::actividad3-seguro-local",
+        "arn:aws:s3:::actividad3-seguro-local/*"
+      ],
+      "Condition": {
+        "Bool": { "aws:SecureTransport": "false" }
+      }
+    }
+  ]
+}
