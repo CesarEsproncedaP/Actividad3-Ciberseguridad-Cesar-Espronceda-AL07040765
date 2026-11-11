@@ -8,7 +8,7 @@ Configuración segura en la nube con Terraform + LocalStack, seguridad de conten
 * `fase2-contenedores/`: `app.js`, `Dockerfile.vulnerable` (node:14), `Dockerfile` (node:22-alpine) y los reportes de Trivy en `reportes/`
 * `fase3-api/`: API con autenticación JWT (`server.js`)
 * `iam/`: políticas IAM en JSON y `ejemplo-uso.md`
-* `diagrama/`: diagrama de arquitectura segura (`.drawio` y `.png`)
+* `diagrama/`: diagrama de arquitectura segura `.png`
 
 ## Requisitos
 
